@@ -8,9 +8,6 @@
 
 <body>
 
-	<table id="tblId">
-	</table>
-
 	<div class="controls">
 		W: <input type="number" id="gridW" value="17" min="1" style="width:40px"/>
 		H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
@@ -20,6 +17,12 @@
 
 		top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
 		bottom: <input type="number" id="bottomRows" value="6" min="0" style="width:40px"/>
+	</div>
+
+	<table id="tblId">
+	</table>
+
+	<div class="controls">
 		<br/><br/>
 
 		*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):
@@ -29,9 +32,10 @@
 		<span id="symbolsOnlyInMiddle"></span><br/>
 
 		<br/>
-		<a href="https://github.com/martinlindhe/zodiac-widget/">github</a> - <i>font by <a href="http://www.zodiackillersite.com/viewtopic.php?f=81&t=3255#p51370" target="_blank">Largo</a> & <a href="http://www.zodiackillerciphers.com/?p=726" target="_blank">zodiackillerciphers.com</a></i>
+		<a href="https://github.com/martinlindhe/zodiac-widget/">github</a>
+		- <i>font by <a href="http://www.zodiackillersite.com/viewtopic.php?f=81&t=3255#p51370" target="_blank">Largo</a>
+		&amp; <a href="http://www.zodiackillerciphers.com/?p=726" target="_blank">zodiackillerciphers.com</a></i>
 	</div>
-
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
