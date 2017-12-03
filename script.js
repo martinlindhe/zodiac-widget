@@ -51,8 +51,17 @@ function redraw() {
 
     topR.max = totRows;
     bottomR.max = totRows;
-
     lastRows = totRows - bottomRows;
+
+    tr = document.createElement("tr");
+    tbl.appendChild(tr);
+    tr.appendChild(document.createElement("td"));
+    for (i = 0; i < width; i++) {
+        td = document.createElement("td");
+        td.className = "rowNum";
+        td.innerHTML = i + 1;
+        tr.appendChild(td);
+    }
 
     cnt = 0;
     row = 0;
@@ -75,9 +84,8 @@ function redraw() {
 
             td = document.createElement("td");
             td.className = "rowNum";
-            tr.appendChild(td);
-
             td.innerHTML = row + 1;
+            tr.appendChild(td);
         }
 
         td = document.createElement("td");
