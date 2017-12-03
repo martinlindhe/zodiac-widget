@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'untitled2regular';
+    src: url('z340-z408-combined-font-monospaced-webfont.woff2') format('woff2'),
+         url('z340-z408-combined-font-monospaced-webfont.woff') format('woff');
+}
+
+#symbolsNotInMiddle, #symbolsOnlyInMiddle, .sym {
+    font-family: 'untitled2regular';
+    line-height: 0.8em;
+}
+.sym:hover {
+    cursor: pointer;
+}
+
+.rowNum {
+    font-size: 6px;
+    color: #aaa;
+}
+
+.controls {
+    font-size: 0.6em;
+}
+
+.green {
+    background-color: rgb(143, 176, 108);
+}
+
+.yellow {
+    background-color: rgb(243, 240, 51);
+}
+
+
+.hover {
+    background-color: #aaa;
+}
+
+hr {
+    width:100%;
+    border: 0;
+    background: #888;
+    border-bottom: 1px dashed #ccc;
+}
