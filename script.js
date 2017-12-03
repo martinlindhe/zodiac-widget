@@ -112,6 +112,12 @@ function redraw() {
     markBySection();
 }
 
+function reset() {
+    // reset width
+    document.getElementById("gridW").value = 17;
+    redraw();
+}
+
 // find and color all the letters not in middle in GREEN, and those only in middle in YELLOW
 function markBySection() {
     var width = document.getElementById("gridW").value;
