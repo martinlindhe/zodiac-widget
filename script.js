@@ -157,7 +157,12 @@ function markBySection() {
         }
     }
 
-    if (document.getElementById("markTopBottomOnly").checked) {
+
+
+    var showNotInMiddle = document.getElementById("markTopBottomOnly").checked;
+    infoNotInMiddle.style.display = showNotInMiddle ? 'block' : 'none';
+
+    if (showNotInMiddle) {
         var legend = document.getElementById("symbolsNotInMiddle");
         legend.innerHTML = "";
 
@@ -171,7 +176,11 @@ function markBySection() {
         document.getElementById("symbolsNotInMiddleCount").innerHTML = keys.length;
     }
 
-    if (document.getElementById("markMiddleOnly").checked) {
+    var showOnlyInMiddle = document.getElementById("markMiddleOnly").checked;
+    infoOnlyMiddle.style.display = showOnlyInMiddle ? 'block' : 'none';
+
+    if (showOnlyInMiddle) {
+        console.log("yaa");
         var legend = document.getElementById("symbolsOnlyInMiddle");
         legend.innerHTML = "";
 

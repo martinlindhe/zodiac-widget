@@ -13,7 +13,7 @@
 		H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
 
 		<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span> (*1)<br/>
-		<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span><br/>
+		<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span> (*2)<br/>
 
 		top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
 		bottom: <input type="number" id="bottomRows" value="6" min="0" style="width:40px"/>
@@ -24,12 +24,15 @@
 
 	<div class="controls">
 		<br/><br/>
+		<div id="infoNotInMiddle">
+			*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):
+			<span id="symbolsNotInMiddle"></span>
+		</div>
 
-		*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):
-		<span id="symbolsNotInMiddle"></span><br/>
-
-		*1: Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):
-		<span id="symbolsOnlyInMiddle"></span><br/>
+		<div id="infoOnlyMiddle">
+			*2: Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):
+			<span id="symbolsOnlyInMiddle"></span>
+		</div>
 
 		<br/>
 		<a href="https://github.com/martinlindhe/zodiac-widget/">github</a>
