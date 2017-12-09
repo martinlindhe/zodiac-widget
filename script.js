@@ -180,7 +180,6 @@ function markBySection() {
     infoOnlyMiddle.style.display = showOnlyInMiddle ? 'block' : 'none';
 
     if (showOnlyInMiddle) {
-        console.log("yaa");
         var legend = document.getElementById("symbolsOnlyInMiddle");
         legend.innerHTML = "";
 
