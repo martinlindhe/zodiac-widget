@@ -8,6 +8,15 @@
     font-family: 'untitled2regular';
     line-height: 0.8em;
 }
+#infoMiddleSymbols {
+    border-style: dotted;
+    border-width: 1px;
+    line-height: 0.8em;
+}
+.symInfo {
+    font-family: 'untitled2regular';
+}
+
 .sym:hover {
     cursor: pointer;
 }
