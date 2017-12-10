@@ -25,6 +25,32 @@ function round(value, precision) {
     return Math.round(value * multiplier) / multiplier;
 }
 
+
+// sortFn is optional array sort callback function, 
+// defaults to numeric sort if not passed
+function sortSparseArray(arr, sortFn) {
+    var tempArr = [], indexes = [];
+    for (var i = 0; i < arr.length; i++) {
+        // find all array elements that are not undefined
+        if (arr[i] !== undefined) {
+            tempArr.push(arr[i]);    // save value
+            indexes.push(i);         // save index
+        }
+    }
+    // sort values (numeric sort by default)
+    if (!sortFn) {
+        sortFn = function(a,b) {
+            return a - b;
+        }
+    }
+    tempArr.sort(sortFn);
+    // put sorted values back into the indexes in the original array that were used
+    for (var i = 0; i < indexes.length; i++) {
+        arr[indexes[i]] = tempArr[i];
+    }
+    return arr;
+}
+
 // highlight hovered symbol
 function hi(_class, name) {
     var els = document.getElementsByClassName(_class);
@@ -217,7 +243,12 @@ function markBySection() {
 
     var listTag = document.getElementById("infoMiddleSymbolsList");
 
+    // sort symbols by occurance, descending
     keys = Object.keys(usedInMiddle);
+    keys.sort(function(a, b){
+        return usedInMiddle[a] < usedInMiddle[b];
+    });
+
     var unique = 0;
     for (i = 0; i < usedInMiddle.length; i++) {
         ascii = keys[i]; // XXX need index
