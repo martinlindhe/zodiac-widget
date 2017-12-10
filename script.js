@@ -242,6 +242,7 @@ function markBySection() {
     }
 
     var listTag = document.getElementById("infoMiddleSymbolsList");
+    listTag.innerHTML = "";
 
     // sort symbols by occurance, descending
     keys = Object.keys(usedInMiddle);
@@ -251,11 +252,10 @@ function markBySection() {
 
     var unique = 0;
     for (i = 0; i < usedInMiddle.length; i++) {
-        ascii = keys[i]; // XXX need index
+        ascii = keys[i];
         letter = String.fromCharCode(ascii);
         var cnt = usedInMiddle[ascii];
         if (cnt) {
-            console.log(letter, cnt);
             var pct = (cnt / midLen) * 100;
             listTag.innerHTML += '<span class="symInfo">' + letter + "</span> - " + cnt + " times (" + round(pct, 1) + " %)<br/>";
             unique++;
