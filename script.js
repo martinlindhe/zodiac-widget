@@ -52,6 +52,7 @@ function redraw() {
     topR.max = totRows;
     bottomR.max = totRows;
     lastRows = totRows - bottomRows;
+    document.getElementById("midRows").value = totRows - topRows - bottomRows;
 
     tr = document.createElement("tr");
     tbl.appendChild(tr);
