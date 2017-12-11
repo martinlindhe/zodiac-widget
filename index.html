@@ -7,44 +7,49 @@
 </head>
 
 <body>
+	<div class="grid">
+		<div class="controls">
+			W: <input type="number" id="gridW" value="17" min="1" style="width:40px"/>
+			H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
 
-	<div class="controls">
-		W: <input type="number" id="gridW" value="17" min="1" style="width:40px"/>
-		H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
+			<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span> (*1)<br/>
+			<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span> (*2)<br/>
 
-		<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span> (*1)<br/>
-		<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span> (*2)<br/>
-
-		top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
-		mid: <input type="text" id="midRows" value="8" style="width:30px" disabled="disabled"/>
-		bottom: <input type="number" id="bottomRows" value="6" min="0" style="width:40px"/>
-	</div>
-
-	<table id="tblId">
-	</table>
-
-	<div class="controls">
-		<br/><br/>
-		<div id="infoNotInMiddle">
-			*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):
-			<span id="symbolsNotInMiddle"></span>
+			top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
+			mid: <input type="text" id="midRows" value="8" style="width:30px" disabled="disabled"/>
+			bottom: <input type="number" id="bottomRows" value="6" min="0" style="width:40px"/>
 		</div>
 
-		<div id="infoOnlyMiddle">
-			*2: Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):
-			<span id="symbolsOnlyInMiddle"></span>
+		<div class="table">
+			<table id="tblId">
+			</table>
 		</div>
 
-		<div id="infoMiddleSymbols">
-			Symbols used in the middle area (in total <span id="symbolsInMiddleTotalCount">X</span> symbols, <span id="symbolsInMiddleUniqueCount">X</span> unique):<br/>
-			<span id="infoMiddleSymbolsList"></span>
+		<div class="info">
+			<div id="infoNotInMiddle">
+				*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):
+				<span id="symbolsNotInMiddle"></span>
+				<br/><br/>
+			</div>
+
+			<div id="infoOnlyMiddle">
+				*2: Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):
+				<span id="symbolsOnlyInMiddle"></span>
+				<br/><br/>
+			</div>
+
+			<div id="infoMiddleSymbols">
+				Symbols used in the middle area (in total <span id="symbolsInMiddleTotalCount">X</span> symbols, <span id="symbolsInMiddleUniqueCount">X</span> unique):<br/>
+				<span id="infoMiddleSymbolsList"></span>
+			</div>
 		</div>
 
-		<br/>
-		<i>This widget investigates the observation that an unusual number of symbols are missing from the middle 8 rows, as noted by <a href="http://www.zodiackillersite.com/viewtopic.php?p=56330#p56330">smokie treats</a></i><br/>
-		<a href="https://github.com/martinlindhe/zodiac-widget/">github</a>
-		- <i>font by <a href="http://www.zodiackillersite.com/viewtopic.php?f=81&t=3255#p51370" target="_blank">Largo</a>
-		&amp; <a href="http://www.zodiackillerciphers.com/?p=726" target="_blank">zodiackillerciphers.com</a></i>
+		<div class="foot">
+			<i>This widget investigates the observation that an unusual number of symbols are missing from the middle 8 rows, as noted by <a href="http://www.zodiackillersite.com/viewtopic.php?p=56330#p56330">smokie treats</a></i><br/>
+			<a href="https://github.com/martinlindhe/zodiac-widget/">github</a>
+			- <i>font by <a href="http://www.zodiackillersite.com/viewtopic.php?f=81&t=3255#p51370" target="_blank">Largo</a>
+			&amp; <a href="http://www.zodiackillerciphers.com/?p=726" target="_blank">zodiackillerciphers.com</a></i>
+		</div>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
