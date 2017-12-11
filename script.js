@@ -271,7 +271,6 @@ function markBySection() {
 
     var unique = 0;
     var pos = 0;
-    // XXX in 2 columns
     for (i = 0; i < usedInMiddle.length; i++) {
         ascii = keys[i];
         letter = String.fromCharCode(ascii);
@@ -300,6 +299,72 @@ function markBySection() {
     }
 
     document.getElementById("symbolsInMiddleUniqueCount").innerHTML = unique;
+
+
+
+    //"outside middle area"
+    var usedInOutside = []; // used letters outside of middle area
+    var cnt = 0;
+    for (i = 0; i < z340.length; i++) {
+        if (i < midStart || i >= midStart + midLen) {
+            letter = z340.substring(i, i+1);
+            ascii = letter.charCodeAt();
+            if (usedInOutside[ascii] === undefined) {
+                usedInOutside[ascii] = 1;
+            } else {
+                usedInOutside[ascii]++;
+            }
+            cnt++;
+        }
+    }
+    document.getElementById("symbolsOutsideTotalCount").innerHTML = cnt;
+
+    var listTag = document.getElementById("infoOutsideSymbolsList");
+    listTag.innerHTML = "";
+
+    var tbl = document.createElement('table');
+    listTag.appendChild(tbl);
+    var tr = document.createElement('tr');
+    tbl.appendChild(tr);
+    var td = document.createElement('td');
+    tr.appendChild(td);
+
+    // sort symbols by occurance, descending
+    keys = Object.keys(usedInOutside);
+    keys.sort(function(a, b){
+        return usedInOutside[a] < usedInOutside[b];
+    });
+
+    var unique = 0;
+    var pos = 0;
+    for (i = 0; i < usedInOutside.length; i++) {
+        ascii = keys[i];
+        letter = String.fromCharCode(ascii);
+        var cnt = usedInOutside[ascii];
+        if (cnt) {
+            var pct = (cnt / midLen) * 100;
+            var span = document.createElement('span');
+            span.innerHTML = letter;
+            span.className = "sym style_" + letter;
+            span.onmouseover = new Function("hi('style_" + letter + "','hover')");
+            span.onmouseout = new Function("un('style_" + letter + "','hover')");
+            td.appendChild(span);
+
+            var span = document.createElement('span');
+            span.innerHTML = ' <span class="num">' + cnt + " (" + round(pct, 1) + "%)</span>";
+            td.appendChild(span);
+            td.appendChild(document.createElement('br'));
+            unique++;
+            pos++;
+        }
+        if (pos == Math.ceil(keys.length / 5)) {
+            td = document.createElement('td');
+            tr.appendChild(td);
+            pos = 0;
+        }
+    }
+
+    document.getElementById("symbolsOutsideUniqueCount").innerHTML = unique;
 }
 
 function init() {

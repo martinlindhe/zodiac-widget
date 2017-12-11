@@ -12,8 +12,8 @@
 			W: <input type="number" id="gridW" value="17" min="1" style="width:40px"/>
 			H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
 
-			<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span> (*1)<br/>
-			<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span> (*2)<br/>
+			<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span><br/>
+			<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span><br/>
 
 			top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
 			mid: <input type="text" id="midRows" value="8" style="width:30px" disabled="disabled"/>
@@ -27,20 +27,27 @@
 
 		<div class="info">
 			<div id="infoNotInMiddle">
-				*1: Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):<br/>
+				Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):<br/>
 				<br/>
 				<span id="symbolsNotInMiddle"></span>
 			</div>
 
 			<div id="infoOnlyMiddle">
-				*2: Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):<br/>
+				Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):<br/>
 				<br/>
 				<span id="symbolsOnlyInMiddle"></span>
 			</div>
 
 			<div id="infoMiddleSymbols">
-				Symbols used in the middle area (in total <span id="symbolsInMiddleTotalCount">X</span> symbols, <span id="symbolsInMiddleUniqueCount">X</span> unique):<br/>
+				Middle area (<span id="symbolsInMiddleTotalCount">X</span> symbols, <span id="symbolsInMiddleUniqueCount">X</span> unique):<br/>
+				<br/>
 				<span id="infoMiddleSymbolsList"></span>
+			</div>
+
+			<div id="infoOutsideSymbols">
+				Outside area (<span id="symbolsOutsideTotalCount">X</span> symbols, <span id="symbolsOutsideUniqueCount">X</span> unique):<br/>
+				<br/>
+				<span id="infoOutsideSymbolsList"></span>
 			</div>
 		</div>
 

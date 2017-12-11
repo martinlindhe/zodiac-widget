@@ -10,7 +10,7 @@ body {
 #symbolsNotInMiddle, #symbolsOnlyInMiddle, .sym {
     font-family: 'untitled2regular';
 }
-#infoNotInMiddle, #infoOnlyMiddle, #infoMiddleSymbols {
+#infoNotInMiddle, #infoOnlyMiddle, #infoMiddleSymbols, #infoOutsideSymbols {
     border: 1px dotted #ccc;
     line-height: 0.9em;
     margin-bottom: 10px;
