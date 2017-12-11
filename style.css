@@ -3,6 +3,9 @@
     src: url('z340-z408-combined-font-monospaced-webfont.woff2') format('woff2'),
          url('z340-z408-combined-font-monospaced-webfont.woff') format('woff');
 }
+body {
+    font-family: arial, verdana;
+}
 
 #symbolsNotInMiddle, #symbolsOnlyInMiddle, .sym {
     font-family: 'untitled2regular';
@@ -21,6 +24,11 @@
 .rowNum {
     font-size: 6px;
     color: #ddd;
+}
+
+.num {
+    font-size: 6px;
+    color: #aaa;
 }
 
 .controls, .info, .foot {
@@ -45,6 +53,10 @@ hr {
     border: 0;
     background: #888;
     border-bottom: 1px dashed #ccc;
+}
+
+td {
+    vertical-align: text-top;
 }
 
 

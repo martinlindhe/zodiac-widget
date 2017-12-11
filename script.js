@@ -256,6 +256,13 @@ function markBySection() {
     var listTag = document.getElementById("infoMiddleSymbolsList");
     listTag.innerHTML = "";
 
+    var tbl = document.createElement('table');
+    listTag.appendChild(tbl);
+    var tr = document.createElement('tr');
+    tbl.appendChild(tr);
+    var td = document.createElement('td');
+    tr.appendChild(td);
+
     // sort symbols by occurance, descending
     keys = Object.keys(usedInMiddle);
     keys.sort(function(a, b){
@@ -263,6 +270,8 @@ function markBySection() {
     });
 
     var unique = 0;
+    var pos = 0;
+    // XXX in 2 columns
     for (i = 0; i < usedInMiddle.length; i++) {
         ascii = keys[i];
         letter = String.fromCharCode(ascii);
@@ -274,13 +283,19 @@ function markBySection() {
             span.className = "sym style_" + letter;
             span.onmouseover = new Function("hi('style_" + letter + "','hover')");
             span.onmouseout = new Function("un('style_" + letter + "','hover')");
-            listTag.appendChild(span);
+            td.appendChild(span);
 
             var span = document.createElement('span');
-            span.innerHTML = "  " + cnt + " times (" + round(pct, 1) + " %)";
-            listTag.appendChild(span);
-            listTag.appendChild(document.createElement('br'));
+            span.innerHTML = ' <span class="num">' + cnt + " (" + round(pct, 1) + "%)</span>";
+            td.appendChild(span);
+            td.appendChild(document.createElement('br'));
             unique++;
+            pos++;
+        }
+        if (pos == Math.ceil(keys.length / 5)) {
+            td = document.createElement('td');
+            tr.appendChild(td);
+            pos = 0;
         }
     }
 
