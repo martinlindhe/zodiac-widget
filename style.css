@@ -6,15 +6,12 @@
 
 #symbolsNotInMiddle, #symbolsOnlyInMiddle, .sym {
     font-family: 'untitled2regular';
-    line-height: 0.8em;
 }
-#infoMiddleSymbols {
+#infoNotInMiddle, #infoOnlyMiddle, #infoMiddleSymbols {
     border-style: dotted;
     border-width: 1px;
     line-height: 0.9em;
-}
-.symInfo {
-    font-family: 'untitled2regular';
+    margin-bottom: 10px;
 }
 
 .sym:hover {
@@ -53,8 +50,8 @@ hr {
 
 .grid {
     display: grid;
-    grid-template-columns: 280px 200px;
-    grid-template-rows: 80px 420px 200px;
+    grid-template-columns: 290px 200px;
+    grid-template-rows: 80px 530px 200px;
     /*grid-gap: 10px;*/
 }
 .controls {

@@ -203,7 +203,13 @@ function markBySection() {
             ascii = keys[i];
             letter = String.fromCharCode(ascii);
             hi("style_" + letter, "green");
-            legend.innerHTML += letter;
+
+            var span = document.createElement('span');
+            span.innerHTML = letter;
+            span.className = "sym style_" + letter;
+            span.onmouseover = new Function("hi('style_" + letter + "','hover')");
+            span.onmouseout = new Function("un('style_" + letter + "','hover')");
+            legend.appendChild(span);
         }
         document.getElementById("symbolsNotInMiddleCount").innerHTML = keys.length;
     }
@@ -220,7 +226,13 @@ function markBySection() {
             ascii = keys[i];
             letter = String.fromCharCode(ascii);
             hi("style_" + letter, "yellow");
-            legend.innerHTML += letter;
+
+            var span = document.createElement('span');
+            span.innerHTML = letter;
+            span.className = "sym style_" + letter;
+            span.onmouseover = new Function("hi('style_" + letter + "','hover')");
+            span.onmouseout = new Function("un('style_" + letter + "','hover')");
+            legend.appendChild(span);
         }
         document.getElementById("symbolsOnlyInMiddleCount").innerHTML = keys.length;
     }
@@ -257,7 +269,17 @@ function markBySection() {
         var cnt = usedInMiddle[ascii];
         if (cnt) {
             var pct = (cnt / midLen) * 100;
-            listTag.innerHTML += '<span class="symInfo">' + letter + "</span> - " + cnt + " times (" + round(pct, 1) + " %)<br/>";
+            var span = document.createElement('span');
+            span.innerHTML = letter;
+            span.className = "sym style_" + letter;
+            span.onmouseover = new Function("hi('style_" + letter + "','hover')");
+            span.onmouseout = new Function("un('style_" + letter + "','hover')");
+            listTag.appendChild(span);
+
+            var span = document.createElement('span');
+            span.innerHTML = "  " + cnt + " times (" + round(pct, 1) + " %)";
+            listTag.appendChild(span);
+            listTag.appendChild(document.createElement('br'));
             unique++;
         }
     }
