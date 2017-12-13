@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+	<title>zodiac killer letter distribution widget</title>
+</head>
+
+<body>
+	<div class="grid">
+		<div class="controls">
+			W: <input type="number" id="gridW" value="17" min="1" style="width:40px"/>
+			H: <input type="number" id="gridH" value="0" style="width:40px" disabled="disabled"/> <button onclick="reset()">reset</button><br/>
+
+			<input type="checkbox" id="markTopBottomOnly" value="1" checked="checked"/>mark top+bottom-only in <span class="green">green</span><br/>
+			<input type="checkbox" id="markMiddleOnly" value="1" checked="checked"/>mark middle only in <span class="yellow">yellow</span><br/>
+
+			top: <input type="number" id="topRows" value="6" min="0" style="width:40px"/>
+			mid: <input type="text" id="midRows" value="8" style="width:30px" disabled="disabled"/>
+			bottom: <input type="number" id="bottomRows" value="6" min="0" style="width:40px"/>
+		</div>
+
+		<div class="table">
+			<table id="tblId">
+			</table>
+		</div>
+
+		<div class="info">
+			<div id="infoNotInMiddle">
+				Symbols that only occurs outside the middle area (<span id="symbolsNotInMiddleCount">0</span>):<br/>
+				<br/>
+				<span id="symbolsNotInMiddle"></span>
+			</div>
+
+			<div id="infoOnlyMiddle">
+				Symbols that only occurs inside the middle area (<span id="symbolsOnlyInMiddleCount">0</span>):<br/>
+				<br/>
+				<span id="symbolsOnlyInMiddle"></span>
+			</div>
+
+			<div id="infoMiddleSymbols">
+				Middle area (<span id="symbolsInMiddleTotalCount">X</span> symbols, <span id="symbolsInMiddleUniqueCount">X</span> unique):<br/>
+				<br/>
+				<span id="infoMiddleSymbolsList"></span>
+			</div>
+
+			<div id="infoOutsideSymbols">
+				Outside area (<span id="symbolsOutsideTotalCount">X</span> symbols, <span id="symbolsOutsideUniqueCount">X</span> unique):<br/>
+				<br/>
+				<span id="infoOutsideSymbolsList"></span>
+			</div>
+		</div>
+
+		<div class="foot">
+			<i>This widget investigates the observation that an unusual number of symbols are missing from the middle rows, as noted by members of the <a href="http://www.zodiackillersite.com/viewforum.php?f=81">zodiac killer site forums</a></i><br/>
+			<a href="https://github.com/martinlindhe/zodiac-widget/">github</a>
+			- <i>font by <a href="http://www.zodiackillersite.com/viewtopic.php?f=81&t=3255#p51370" target="_blank">Largo</a>
+			&amp; <a href="http://www.zodiackillerciphers.com/?p=726" target="_blank">zodiackillerciphers.com</a></i>
+		</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
